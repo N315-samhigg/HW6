@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Caveat";
+    font-weight: normal;
+    src: url("../assets/fonts/Caveat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Lato";
+    font-weight: normal;
+    src: url("../assets/fonts/Lato-Regular.ttf");
+}
+
+:root {
+    --dark-gray: #393939;
+    --red: #F25C54;
+    --med-red: #EFA7A7;
+    --lite-red: #FCBCB8;
+    --yellow: #FFD972;
+    --green: #A7E8BD;
+}

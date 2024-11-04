@@ -1,0 +1,53 @@
+footer {
+    width: 100vw;
+    height: 7vh;
+    margin-top: -10vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    * {
+        font-family: "Lato", sans-serif;
+        font-style: italic;
+        font-size: 15px;
+
+        color: var(--dark-gray);
+        text-decoration: none;
+        margin: 1.5vh;
+
+        height: 100%;
+    }
+
+    .copyright {
+        margin-top: 10px;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    a:hover {
+        font-weight: bold;
+        color: black;
+    }
+
+    .socials {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            width: 2.375vh;
+            height: 2.375vh;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.66;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+    }
+}

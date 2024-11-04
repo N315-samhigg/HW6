@@ -1,0 +1,64 @@
+<div id="loginPage">
+  <div class="loginSec">
+    <h2>Login here!</h2>
+    <input
+      type="email"
+      name="emailLogin"
+      id="emailLogin"
+      placeholder="Email Address"
+    />
+    <input
+      type="password"
+      name="passLogin"
+      id="passLogin"
+      placeholder="Password"
+    />
+    <button type="submit" id="loginBtn" onclick="loginProcess()">Login</button>
+  </div>
+  <div class="loginSec">
+    <em>don't have an account?</em>
+    <h2>Sign Up!</h2>
+    <input
+      type="text"
+      name="firstNameSign"
+      id="firstNameSign"
+      placeholder="First Name"
+    />
+    <input
+      type="text"
+      name="lastNameSign"
+      id="lastNameSign"
+      placeholder="Last Name"
+    />
+    <input
+      type="email"
+      name="emailSign"
+      id="emailSign"
+      placeholder="Email Address"
+    />
+    <input
+      type="password"
+      name="passSign"
+      id="passSign"
+      placeholder="Password"
+    />
+    <button type="submit" id="signUpBtn">Sign Up</button>
+  </div>
+</div>
+
+<script type="module">
+  import { changePage, checkLogin, register } from "./model/model.js";
+
+  export function loginProcess() {
+    checkLogin($("#emailLogin").value(), $("#passLogin").value());
+  }
+
+  export function signUpProcess() {
+    register(
+      $("#firstNameSign").value(),
+      $("#lastNameSign").value(),
+      $("#emailSign").value(),
+      $("#passSign").value()
+    );
+  }
+</script>

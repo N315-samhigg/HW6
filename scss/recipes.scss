@@ -1,0 +1,93 @@
+#recipePage {
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    padding: 20vh 7.5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(180deg, #A7E8BDBB 0%, #A7E8BDBB 100%), url("../assets/img/recipe-hero.jpg");
+    background-position: center;
+    background-size: cover;
+
+    h2 {
+        width: 100%;
+    }
+
+    #recipeCont {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .recipe {
+            width: calc(240px + 25vw);
+            height: 17.5vh;
+            min-height: 275px;
+            margin-top: 2.5vh;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            img {
+                width: 325px;
+                height: 100%;
+                border-radius: 2vw;
+
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .textSec {
+                width: 250px;
+                padding: 40px;
+                height: 100%;
+                border-radius: 2vw;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                background-color: white;
+                color: black;
+
+                * {
+                    font-family: "Lato", "Caveat", sans-serif;
+                    font-size: 1.5vh;
+                }
+
+                h3 {
+                    text-align: center;
+                    font-size: 2.25vh !important;
+                    width: 100%;
+                    border-bottom: 3px solid black;
+                }
+
+                .logoSec {
+                    width: 60%;
+                    margin: 10px;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    img {
+                        height: 3vh;
+                        width: 3vh;
+                    }
+
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

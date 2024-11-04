@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "Caveat", sans-serif;
+  transition: all 0.25s ease-in-out;
+}
+
+html, body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+}
+#app * {
+  height: fit-content;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Caveat", "Lato", sans-serif;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+@font-face {
+  font-family: "Caveat";
+  font-weight: normal;
+  src: url("../assets/fonts/Caveat-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  font-weight: normal;
+  src: url("../assets/fonts/Lato-Regular.ttf");
+}
+:root {
+  --dark-gray: #393939;
+  --red: #F25C54;
+  --med-red: #EFA7A7;
+  --lite-red: #FCBCB8;
+  --yellow: #FFD972;
+  --green: #A7E8BD;
+}
+
+header {
+  width: 100vw;
+  height: 144px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 99;
+}
+header .nav-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.2rem;
+}
+header .nav-container .logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+header .nav-container nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav-container nav li {
+  margin-left: 41px;
+}
+header .nav-container nav a {
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+  box-shadow: inset 0 0 0 0 black;
+  display: flex;
+  align-items: center;
+}
+header .nav-container nav a p {
+  margin-bottom: 0;
+  font-family: "Caveat", "Lato", sans-serif;
+}
+header .nav-container nav a:hover p {
+  box-shadow: inset 0 -3px 0 0 black;
+}
+header .nav-container nav #login {
+  width: 158px;
+  height: 52px;
+  border-radius: 50px;
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.5019607843);
+}
+header .nav-container nav #login a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+}
+@media (max-width: 700px) {
+  header .nav-container .logo {
+    font-size: 1.2rem;
+    z-index: 2;
+  }
+  header .nav-container nav {
+    flex-direction: column;
+  }
+  header .nav-container ul.nav--ul__one,
+  header .nav-container ul.nav--ul__two {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 10vh auto;
+  }
+  header .nav-container .hamburger-menu {
+    display: block;
+  }
+  header .nav-container nav {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    background-color: burlywood;
+    color: white;
+    transition: all 0.25s ease-in-out;
+  }
+  header .nav-container nav.active {
+    right: 0;
+  }
+}
+
+#homePage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#homePage #hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+}
+#homePage #hero .circle-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(242, 92, 84, 0.7333333333) 0%, rgba(242, 92, 84, 0.7333333333) 100%), url("../assets/img/hero.jpg");
+  background-size: cover;
+}
+#homePage #hero .circle-container .yellow-circle {
+  width: 357px;
+  height: 357px;
+  padding: 75px;
+  background-color: #FFD972;
+  border-radius: 200px;
+  z-index: 2;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.5019607843);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#homePage #hero .circle-container .yellow-circle h2 {
+  font-size: 24px;
+}
+#homePage #hero .circle-container .yellow-circle p {
+  font-size: 13px;
+  text-align: center;
+  font-family: "Lato";
+}
+#homePage #hero .circle-container .red-circle {
+  position: absolute;
+  width: 168px;
+  height: 168px;
+  padding: 40px;
+  margin-top: -300px;
+  margin-left: 350px;
+  font-size: 10px;
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBCB8;
+  border-radius: 100px;
+  z-index: 1;
+}
+
+#recipePage {
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 20vh 7.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, rgba(167, 232, 189, 0.7333333333) 0%, rgba(167, 232, 189, 0.7333333333) 100%), url("../assets/img/recipe-hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#recipePage h2 {
+  width: 100%;
+}
+#recipePage #recipeCont {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#recipePage #recipeCont .recipe {
+  width: calc(240px + 25vw);
+  height: 17.5vh;
+  min-height: 275px;
+  margin-top: 2.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#recipePage #recipeCont .recipe img {
+  width: 325px;
+  height: 100%;
+  border-radius: 2vw;
+  object-fit: cover;
+  object-position: center;
+}
+#recipePage #recipeCont .recipe .textSec {
+  width: 250px;
+  padding: 40px;
+  height: 100%;
+  border-radius: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+}
+#recipePage #recipeCont .recipe .textSec * {
+  font-family: "Lato", "Caveat", sans-serif;
+  font-size: 1.5vh;
+}
+#recipePage #recipeCont .recipe .textSec h3 {
+  text-align: center;
+  font-size: 2.25vh !important;
+  width: 100%;
+  border-bottom: 3px solid black;
+}
+#recipePage #recipeCont .recipe .textSec .logoSec {
+  width: 60%;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#recipePage #recipeCont .recipe .textSec .logoSec img {
+  height: 3vh;
+  width: 3vh;
+}
+#recipePage #recipeCont .recipe .textSec .logoSec p {
+  margin: 0;
+  padding: 0;
+}
+
+#loginPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#loginPage * {
+  font-family: "Lato", "Caveat", sans-serif;
+}
+#loginPage div.loginSec {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+#loginPage div.loginSec h2 {
+  text-transform: capitalize;
+  font-size: 30px;
+}
+#loginPage div.loginSec input {
+  display: flex;
+  height: 5vh;
+  margin-bottom: 8px;
+  color: black;
+  font-size: 12px;
+  padding: calc(0.5 * (5vh - 12px));
+  background-color: transparent;
+  border: 0 transparent solid;
+  border-bottom: solid 3px black;
+}
+#loginPage div.loginSec input::placeholder {
+  color: black;
+}
+#loginPage div.loginSec button {
+  width: 100%;
+  height: 7.5vh;
+  margin-top: 40px;
+  font-family: "Caveat", "Lato", sans-serif;
+  font-size: 25px;
+  background-color: var(--yellow);
+  border: 0 solid transparent;
+  border-radius: 5vh;
+  box-shadow: 0 10px 6px rgba(0, 0, 0, 0.5019607843);
+}
+#loginPage div.loginSec button:hover {
+  cursor: pointer;
+}
+
+footer {
+  width: 100vw;
+  height: 7vh;
+  margin-top: -10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer * {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--dark-gray);
+  text-decoration: none;
+  margin: 1.5vh;
+  height: 100%;
+}
+footer .copyright {
+  margin-top: 10px;
+}
+footer .links {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer a:hover {
+  font-weight: bold;
+  color: black;
+}
+footer .socials {
+  display: flex;
+  justify-content: space-between;
+}
+footer .socials a {
+  width: 2.375vh;
+  height: 2.375vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.66;
+}
+footer .socials a:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */
